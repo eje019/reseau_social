@@ -3,7 +3,7 @@ $host = "localhost";
 
 $dbname = "reseau_social";
 
-$usename = "root";
+$username = "root";
 
 $password = "";
 
