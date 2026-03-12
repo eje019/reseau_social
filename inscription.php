@@ -25,7 +25,13 @@ if (isset($_POST["inscription"])){
         $erreurs[]= "L'addresse email n'est pas valide";
     }
 
-    
+    if(strlen($password)<6){
+        $erreurs[] = "Votre mot de passe doit contenir au moins 6 caracteres.";
+    }
+
+    if($password !== $confirmation){
+        $erreurs = "Vos mots de passes ne correspondent pas";
+    }
 
 }
 
