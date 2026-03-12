@@ -80,6 +80,16 @@ if (isset($_POST["inscription"])){
 </head>
 <body>
     <h1>Inscription</h1>
+    
+    <?php if (!empty($erreurs)): ?>
+    <div style="color: red; border: 1px solid red; padding: 10px; margin-bottom: 20px;">
+        <?php foreach($erreurs as $erreur): ?>
+            <p><?= htmlspecialchars($erreur) ?></p> 
+            <!-- htmlspecialchars protège contre les attaques XSS -->
+        <?php endforeach; ?>
+    </div>
+    <?php endif; ?>
+
     <form action="inscription.php" methode="POST">
         <div>
             <label for="nom_utilisateur">Nom d'utilisateur :</label>
