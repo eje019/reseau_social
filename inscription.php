@@ -47,9 +47,21 @@ if (isset($_POST["inscription"])){
     //si tout est ok on l'insere dans la bdd 
     if(empty($erreurs)){
         //hachage du mot de passe (CRUCIAL)
-        $password = password_hash($password, PASSWORD_DEFAULT);
+        $password_hash = password_hash($password, PASSWORD_DEFAULT);
 
+        //requete d'insertion preparee (pour proteger contre les injections SQL)
+        $requete = $pdo->prepare("INSERT INTO utilisateurs (nom_utilisateur, email, mot_de_passe) VALUES (?, ?, ?)");
+
+        if ($requete->execute ([$nom_utilisateur, $email, $password_hash])) {
+            //succes ? on redirige vers la page de connexion avec un message 
+            header("Location : conexion.php?success=1");
+            exit();
+        } else {
+            $erreurs[] = "Erreurs lors de l'inscription. Veuillez reessayer";
+        }
     }
+
+    
 
 }
 
