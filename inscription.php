@@ -61,7 +61,8 @@ if (isset($_POST["inscription"])){
         }
     }
 
-    
+    //si on arrive ici il y a des erreurs 
+    //on vas le afficher dans le HTML
 
 }
 
@@ -73,7 +74,8 @@ if (isset($_POST["inscription"])){
 <html lang = "en"></html>
 <head>
     <meta charset="UTF-8">
-    <title>Inscription</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscription sur SmallFb</title>
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
