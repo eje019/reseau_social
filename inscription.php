@@ -1,6 +1,7 @@
 <?php
 require_once("includes/db.php");
 
+//on check si le formujlaire a ete soumis
 if (isset($_POST["inscription"])){
 
     //recuperation des donnees du formulaire et nettoiement (pour la securite)
@@ -12,7 +13,17 @@ if (isset($_POST["inscription"])){
 
     $confirmation = trim($_POST["confirmation"]);
 
+    //validation des donnees (on verifie que tout est ok)
+    $erreurs = [];
+
+    if(empty($nom_utilisateur) || strlen($nom_utilisateur) < 3){
+        $erreurs[] = "Le nom d'utilisateur doit contenir au moins 3 caracteress.";
+
+        
+    }
 }
+
+
 
 ?>
 
