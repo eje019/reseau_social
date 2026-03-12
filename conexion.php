@@ -66,5 +66,19 @@ if(isset($_SESSION["utilisateur_id"]))
     <?php if (isset($succes)): ?>
         <div style="color: green; border: 1px solid green; padding: 10px;"><?= htmlspecialchars($succes) ?></div>
     <?php endif; ?>
+
+    <form action="connexion.php" method="POST">
+        <div>
+            <label for="identifiant">Nom d'utilisateur ou Email :</label>
+            <input type="text" id="identifiant" name="identifiant">
+
+            <label for="mot_de_passe" name="mot_de_passe">Mot de passe :</label>
+            <input type="password" name="pasword" id="password">
+
+            <button type="submit" name="connexion">Se connecter</button>
+        </div>
+
+        <p>Pas encore de compte ? <a href="inscription.php">Inscrivez vous ici</a></p>
+    </form>
 </body>
 </html>
