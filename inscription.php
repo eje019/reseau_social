@@ -45,9 +45,10 @@ if (isset($_POST["inscription"])){
     }
 
     //si tout est ok on l'insere dans la bdd 
-
     if(empty($erreurs)){
-        
+        //hachage du mot de passe (CRUCIAL)
+        $password = password_hash($password, PASSWORD_DEFAULT);
+
     }
 
 }
