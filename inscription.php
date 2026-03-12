@@ -1,7 +1,5 @@
 <?php
-require_once("includes/db.php")
-
-?>
+require_once("includes/db.php")?>
 
 <!DOCTYPE html>
 <html lang = "en"></html>
@@ -24,7 +22,7 @@ require_once("includes/db.php")
         </div>
 
         <div>
-            <label for="password">Mot de asse :</label>
+            <label for="password">Mot de passe :</label>
             <input type="password"name="password" id="password" required>
         </div>
 
