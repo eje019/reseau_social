@@ -17,7 +17,21 @@ if(isset($_SESSION["utilisateur_id"]))
         $password =$_POST["password"];
 
         if(!empty($identifiant) && !empty($password)){
-            
+
+        //on cherche l'utilisateur par son nom ou son email
+        $requete = $pdo->prepare("SELECT id, nom_utilisateur, email, mot_de_passe, FROM utilisateurs WHERE nom_utilisateur = ? OR email = ? ");
+        
+        $requete->execute ([$identifiant, $identifiant]);
+
+        $utilisateur = $requete->fetch();
+
+        //si on a trouve un uyilisateur et que le mot de passe correspond 
+
+        if ($utilisateur  && password_verify($password, $utilisateur)){
+
+            //on enregistre les infos dans la session
+        } 
+        
         }
     }
 ?>
