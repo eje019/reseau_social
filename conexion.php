@@ -30,6 +30,11 @@ if(isset($_SESSION["utilisateur_id"]))
         if ($utilisateur  && password_verify($password, $utilisateur)){
 
             //on enregistre les infos dans la session
+            $_SESSION["utilisateur_id"] = $utilisateur["id"];
+            $_SESSION["utilisateur_nom"] = $utilisateur["nom_utilisateur"];
+            $_SESSION["utilisateur_email;"] = $utilisateur["email"];
+  
+            
         } 
         
         }
