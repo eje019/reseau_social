@@ -47,6 +47,24 @@ if(isset($_SESSION["utilisateur_id"]))
 
     //message de succes depuis l'inscription
         if(isset($_GET["succes"]) && $_GET["succes"] == 1){
-            $success = "Inscription reussie ! Connectez vous maintenant.";
+            $succes = "Inscription reussie ! Connectez vous maintenant.";
     }
 ?>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Connexion - SmallFb</title>
+</head>
+<body>
+    <h1>Connexion</h1>
+
+    <?php if (isset($succes)): ?>
+        <div style="color: green; border: 1px solid green; padding: 10px;"><? = htmlspecialchars($succes) ?></div>
+    <?php endif; ?>
+</body>
+</html>
