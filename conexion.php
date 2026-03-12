@@ -34,6 +34,9 @@ if(isset($_SESSION["utilisateur_id"]))
             $_SESSION["utilisateur_nom"] = $utilisateur["nom_utilisateur"];
             $_SESSION["utilisateur_email;"] = $utilisateur["email"];
   
+            //on redirige vers la page d'accueil
+            header("Location: index.php");
+
             
         } 
         
