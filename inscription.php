@@ -1,5 +1,20 @@
 <?php
-require_once("includes/db.php")?>
+require_once("includes/db.php");
+
+if (isset($_POST["inscription"])){
+
+    //recuperation des donnees du formulaire et nettoiement (pour la securite)
+    $nom_utilisateur = trim($_POST["nom_utilisateur"]);
+
+    $email = trim($_POST["email"]);
+
+    $password = trim($_POST["password"]);
+
+    $confirmation = trim($_POST["confirmation"]);
+
+}
+
+?>
 
 <!DOCTYPE html>
 <html lang = "en"></html>
