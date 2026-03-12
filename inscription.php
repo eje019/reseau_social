@@ -33,6 +33,23 @@ if (isset($_POST["inscription"])){
         $erreurs = "Vos mots de passes ne correspondent pas";
     }
 
+    //verfification email existant
+    if(empty($erreurs)){
+        $checkUtilisateur = $pdo->prepare("SELECT id FROM utilisateurs WHERE nom_utilisateur = ? OR email = ?");
+        $checkUtilisateur->execute([$nom_utilisateur, $email]);
+
+
+        if ($checkUtilisateur->rowCount() > 0 ){
+            $erreurs[]= "Utilisateur deja existant";
+        }
+    }
+
+    //si tout est ok on l'insere dans la bdd 
+
+    if(empty($erreurs)){
+        
+    }
+
 }
 
 
