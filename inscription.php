@@ -19,8 +19,14 @@ if (isset($_POST["inscription"])){
     if(empty($nom_utilisateur) || strlen($nom_utilisateur) < 3){
         $erreurs[] = "Le nom d'utilisateur doit contenir au moins 3 caracteress.";
 
-        
     }
+
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)){
+        $erreurs[]= "L'addresse email n'est pas valide";
+    }
+
+    
+
 }
 
 
