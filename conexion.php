@@ -64,7 +64,7 @@ if(isset($_SESSION["utilisateur_id"]))
     <h1>Connexion</h1>
 
     <?php if (isset($succes)): ?>
-        <div style="color: green; border: 1px solid green; padding: 10px;"><? = htmlspecialchars($succes) ?></div>
+        <div style="color: green; border: 1px solid green; padding: 10px;"><?= htmlspecialchars($succes) ?></div>
     <?php endif; ?>
 </body>
 </html>
