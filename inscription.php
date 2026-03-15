@@ -1,6 +1,6 @@
 <?php
 
-var_dump($_POST);
+// var_dump($_POST);
 
 
 // require_once("includes/db.php");
@@ -70,6 +70,26 @@ var_dump($_POST);
 
 // }
 
+
+if(isset($_POST["inscription"])) {
+    $nom = $_POST["nom_utilisateur"];
+    $email = $_POST["email"];
+    $mot_de_passe=["mot_de_passe"];
+    $confirmation = ["confirmation"];
+
+    // if(empty($nom)){
+    //     echo "Le nom d'utilisateur est vide";
+    // }
+
+    // if(empty($email)){
+    //     echo "Le mail est vide !";
+    // }
+
+    if (empty($nom) || empty($email) || empty($mot_de_passe) || empty($confirmation)){
+        echo "Tous les champs doivent etre remplis";
+    }
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -82,20 +102,12 @@ var_dump($_POST);
 </head>
 <body>
     <h1>Inscription</h1>
-    
-    <?php if (!empty($erreurs)): ?>
-    <div style="color: red; border: 1px solid red; padding: 10px; margin-bottom: 20px;">
-        <?php foreach($erreurs as $erreur): ?>
-            <p><?= htmlspecialchars($erreur) ?></p> 
-            <!-- htmlspecialchars protège contre les attaques XSS -->
-        <?php endforeach; ?>
-    </div>
-    <?php endif; ?>
 
     <form method="POST" action="inscription.php">
         <input type="text" name="nom_utilisateur">
         <input type="email" name="email">
         <input type="password" name="mot_de_passe">
+        <input type="password" name="confirmation">
         <button type="submit" name="inscription">S'inscrire</button>
     </form>
 
